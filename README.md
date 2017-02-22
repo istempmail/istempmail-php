@@ -1,5 +1,5 @@
-# IsTempMail PHP script
-PHP script to check disposable email address using IsTempMail API
+# IsTempMail PHP
+PHP library to check disposable email address using IsTempMail API
 
 ## How to use
     <?php
