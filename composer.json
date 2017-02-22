@@ -1,0 +1,12 @@
+{
+  "name":"istempmail/istempmail-php",
+  "type":"library",
+  "description":"PHP library to check disposable email address using IsTempMail API",
+  "license":"GPLv3",
+  "require":{
+    "php":">5.3.0"
+  },
+  "autoload": {
+    "files": ["istempmail.php"]
+  }
+}
