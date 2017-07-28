@@ -34,7 +34,7 @@ class IsTempMail
     public function isDea($email)
     {
         if($this->getToken()) {
-            $url = self::PRIVATE_API . $email . '?token' . $this->getToken();
+            $url = self::PRIVATE_API . $email . '?token=' . $this->getToken();
         } else {
             $url = self::PUBLIC_API . $email;
         }
