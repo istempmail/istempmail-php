@@ -2,20 +2,17 @@
 PHP library to check disposable email address using IsTempMail API
 
 ## How to use
+To get your API token, register at [IsTempMail](https://www.istempmail.com/sign-up), select a plan and copy your API token there.
+
     <?php
     include('istempmail.php');
     
-    // if you have an API token, add it like this
-    // $isTempMail = new IsTempMail('YOUR_API_TOKEN');
+    $isTempMail = new IsTempMail('YOUR_API_TOKEN');
     
-    $isTempMail = new IsTempMail();
     try {
-    
         if($isTempMail->isDea('spammer@mailinator.com')) {
             echo 'Disposable email address detected.';
-            exit;
         }
     } catch (Exception $exception) {
         echo $exception->getMessage();
-        exit;
     }
