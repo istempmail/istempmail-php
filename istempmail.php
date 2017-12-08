@@ -6,17 +6,13 @@ if (!function_exists("curl_init")) {
 
 class IsTempMail
 {
+    private $token;
 
-    private $token = '';
+    const API_CHECK = 'https://www.istempmail.com/api/check/';
 
-    const PUBLIC_API = 'https://www.istempmail.com/api-public/check/';
-    const PRIVATE_API = 'https://www.istempmail.com/api/check/';
-
-    function __construct($token = '')
+    function __construct($token)
     {
-        if($token) {
-            $this->token = $token;
-        }
+        $this->token = $token;
     }
 
     public function getToken()
@@ -33,11 +29,7 @@ class IsTempMail
 
     public function isDea($email)
     {
-        if($this->getToken()) {
-            $url = self::PRIVATE_API . $email . '?token=' . $this->getToken();
-        } else {
-            $url = self::PUBLIC_API . $email;
-        }
+        $url = self::API_CHECK . $email . '?token=' . $this->getToken();
 
         $ch = curl_init($url);
         curl_setopt_array($ch, array(
