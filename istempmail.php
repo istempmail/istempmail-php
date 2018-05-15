@@ -27,9 +27,9 @@ class IsTempMail
         return $this;
     }
 
-    public function isDea($email)
+    public function isDea($domain)
     {
-        $url = self::API_CHECK . $email . '?token=' . $this->getToken();
+        $url = self::API_CHECK . $this->getToken() . '/' . $domain;
 
         $ch = curl_init($url);
         curl_setopt_array($ch, array(
